@@ -1,6 +1,6 @@
 declare module "react-native-signature-canvas" {
   import React from "react";
-  import { StyleProp, ViewStyle } from "react-native";
+  import { StyleProp, ViewStyle, DimensionValue } from "react-native";
 
   type ImageType = "image/png" | "image/jpeg" | "image/svg+xml";
 
@@ -14,8 +14,12 @@ declare module "react-native-signature-canvas" {
     androidHardwareAccelerationDisabled?: boolean;
     autoClear?: boolean;
     backgroundColor?: string;
-    bgHeight?: number;
-    bgWidth?: number;
+    bgHeight?: | number
+    | 'auto'
+    | `${number}%`;
+    bgWidth?: | number
+    | 'auto'
+    | `${number}%`;
     bgSrc?: string;
     clearText?: string;
     confirmText?: string;
